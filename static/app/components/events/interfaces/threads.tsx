@@ -34,7 +34,7 @@ import {inferPlatform, isStacktraceNewestFirst} from './utils';
 
 type ExceptionProps = React.ComponentProps<typeof ExceptionContent>;
 
-type Props = Pick<ExceptionProps, 'groupingCurrentLevel' | 'hasHierarchicalGrouping'> & {
+type Props = Pick<ExceptionProps, 'groupingCurrentLevel'> & {
   data: {
     values?: Array<Thread>;
   };
@@ -97,7 +97,6 @@ export function Threads({
   data,
   event,
   projectSlug,
-  hasHierarchicalGrouping,
   groupingCurrentLevel,
   organization,
 }: Props) {
@@ -181,7 +180,6 @@ export function Threads({
           event={event}
           values={exception.values}
           groupingCurrentLevel={groupingCurrentLevel}
-          hasHierarchicalGrouping={hasHierarchicalGrouping}
           meta={meta}
           threadId={activeThread?.id}
         />
@@ -208,7 +206,6 @@ export function Threads({
           event={event}
           platform={platform}
           groupingCurrentLevel={groupingCurrentLevel}
-          hasHierarchicalGrouping={hasHierarchicalGrouping}
           meta={meta}
           threadId={activeThread?.id}
         />
