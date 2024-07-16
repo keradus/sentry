@@ -22,6 +22,9 @@ from sentry.api.endpoints.organization_missing_org_members import OrganizationMi
 from sentry.api.endpoints.organization_projects_experiment import (
     OrganizationProjectsExperimentEndpoint,
 )
+from sentry.api.endpoints.organization_pull_request_file_issues import (
+    OrganizationPullRequestFilesIssuesEndpoint,
+)
 from sentry.api.endpoints.organization_spans_aggregation import OrganizationSpansAggregationEndpoint
 from sentry.api.endpoints.organization_stats_summary import OrganizationStatsSummaryEndpoint
 from sentry.api.endpoints.organization_unsubscribe import (
@@ -1826,6 +1829,11 @@ ORGANIZATION_URLS = [
         r"^(?P<organization_id_or_slug>[^\/]+)/plugins/configs/$",
         OrganizationPluginsConfigsEndpoint.as_view(),
         name="sentry-api-0-organization-plugins-configs",
+    ),
+    re_path(
+        r"^(?P<organization_id_or_slug>[^\/]+)/pr-file-issues/$",
+        OrganizationPullRequestFilesIssuesEndpoint.as_view(),
+        name="sentry-api-0-organization-pr-file-issues",
     ),
     re_path(
         r"^(?P<organization_id_or_slug>[^\/]+)/releases/$",
