@@ -138,6 +138,9 @@ function DurationChart({
   };
 
   const handleChartHighlight: EChartHighlightHandler = e => {
+    // ignore mouse hovering over the chart legend
+    if (!e.batch) return;
+
     const {seriesIndex} = e.batch[0];
     const isSpanSample =
       seriesIndex > 1 && seriesIndex < 2 + sampledSpanDataSeries.length;

@@ -1,5 +1,5 @@
 import type React from 'react';
-import {Fragment} from 'react';
+import {Fragment, useEffect} from 'react';
 import {css} from '@emotion/react';
 import styled from '@emotion/styled';
 
@@ -13,7 +13,20 @@ export type InsightChartModalOptions = {
 };
 type Props = ModalRenderProps & InsightChartModalOptions;
 
-export default function InsightChartModal({Header, title, children}: Props) {
+export default function InsightChartModal({
+  Header,
+  title,
+  children,
+  modalContainerRef,
+}: Props) {
+  useEffect(() => {
+    // display the fullscreen insight charts on top of any sidebar elements
+    // with z-index 10000 or 10001
+    if (modalContainerRef?.current?.style) {
+      modalContainerRef.current.style.zIndex = '10002';
+    }
+  }, [modalContainerRef]);
+
   return (
     <Fragment>
       <Container>
@@ -33,7 +46,6 @@ const Container = styled('div')<{height?: number | null}>`
   height: ${p => (p.height ? `${p.height}px` : 'auto')};
   position: relative;
   padding-bottom: ${space(3)};
-  z-index: 1000;
 `;
 
 export const modalCss = css`
