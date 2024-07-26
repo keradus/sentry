@@ -1027,6 +1027,33 @@ class EventManagerTest(TestCase, SnubaTestCase, EventManagerTestMixin, Performan
         assert event1.transaction is None
         assert event1.culprit == "in_app_function"
 
+    def test_foo(self) -> None:
+        manager = EventManager(
+            make_event(
+                platform="javascript",
+                exception={
+                    "values": [
+                        {
+                            "type": "Error",
+                            "stacktrace": {
+                                "frames": [
+                                    {
+                                        "function": "<object>.onClick",
+                                        "module": "web-ux/currency/src/App",
+                                        "filename": "web-ux/currency/src/App.jsx",
+                                        "abs_path": "webpack:///web-ux/currency/src/App.jsx",
+                                    }
+                                ]
+                            },
+                        }
+                    ]
+                },
+            )
+        )
+        # manager.normalize()
+        event = manager.save(self.project.id)
+        assert event.data["exception"]["values"][0]["stacktrace"]["frames"][0]["in_app"] is True
+
     def test_inferred_culprit_from_empty_stacktrace(self) -> None:
         manager = EventManager(make_event(stacktrace={"frames": []}))
         manager.normalize()
