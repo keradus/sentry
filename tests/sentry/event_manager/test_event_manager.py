@@ -1039,18 +1039,28 @@ class EventManagerTest(TestCase, SnubaTestCase, EventManagerTestMixin, Performan
                                 "frames": [
                                     {
                                         "function": "<object>.onClick",
-                                        "module": "web-ux/currency/src/App",
-                                        "filename": "web-ux/currency/src/App.jsx",
-                                        "abs_path": "webpack:///web-ux/currency/src/App.jsx",
+                                        "module": "foo/src/App",
+                                        "filename": "foo/src/App.jsx",
+                                        "abs_path": "webpack:///foo/src/App.jsx",
                                     }
                                 ]
                             },
+                            "raw_stacktrace": {
+                                "frames": [
+                                    {
+                                        "function": "onClick",
+                                        "filename": "/assets/foo/index-abcdef.js",
+                                        "abs_path": "https://cdn1.bar.com/assets/foo/index-abcdef.js",
+                                        "in_app": True,
+                                    }
+                                ]
+                            },
+                            "mechanism": {"type": "instrument", "handled": False},
                         }
                     ]
                 },
             )
         )
-        # manager.normalize()
         event = manager.save(self.project.id)
         assert event.data["exception"]["values"][0]["stacktrace"]["frames"][0]["in_app"] is True
 
