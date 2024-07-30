@@ -127,7 +127,7 @@ def get_similarity_data_from_seer(
 
     metric_tags["response_status"] = response.status
 
-    if response.status > 200:
+    if response.status >= 300:
         redirect = response.get_redirect_location()
         if redirect:
             logger.error(
