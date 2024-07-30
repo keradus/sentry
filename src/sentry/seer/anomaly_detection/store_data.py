@@ -137,9 +137,11 @@ def send_historical_data_to_seer(alert_rule: AlertRule, user: User) -> BaseHTTPR
         return base_error_response
 
     MIN_DAYS = 7
-    available_data_days = historical_data["end"] - historical_data["start"]
+    available_data_days = historical_data.end - historical_data.start
     if available_data_days < timedelta(days=MIN_DAYS):
-        resp = BaseHTTPResponse(status=200, reason="Fewer than 7 days of data")
+        not_enough_data_text = "Fewer than seven days of historical data available"
+        resp.status = 202
+        resp.reason = not_enough_data_text
     return resp
 
 

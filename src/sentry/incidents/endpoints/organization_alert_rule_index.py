@@ -124,11 +124,11 @@ class AlertRuleIndexMixin(Endpoint):
                 alert_rule = serializer.save()
                 if alert_rule.detection_type == AlertRuleDetectionType.DYNAMIC.value:
                     resp = send_historical_data_to_seer(alert_rule=alert_rule, user=request.user)
-                    if resp.status != 200:
+                    if (
+                        resp.status != 200 and resp.status != 202
+                    ):  # NOTE: send a 202 if we get a "not enough data" warning
                         alert_rule.delete()
                         return Response({"detail": resp.reason}, status=status.HTTP_400_BAD_REQUEST)
-                    # if resp.reason == "Fewer than 7 days of data":
-                    #     print("halp")
 
                 referrer = request.query_params.get("referrer")
                 session_id = request.query_params.get("sessionId")
@@ -148,7 +148,14 @@ class AlertRuleIndexMixin(Endpoint):
                         duplicate_rule=duplicate_rule,
                         wizard_v3=wizard_v3,
                     )
-                return Response(serialize(alert_rule, request.user), status=status.HTTP_201_CREATED)
+                if resp.status == 202:
+                    return Response(
+                        serialize(alert_rule, request.user), status=status.HTTP_202_ACCEPTED
+                    )
+                else:
+                    return Response(
+                        serialize(alert_rule, request.user), status=status.HTTP_201_CREATED
+                    )
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
