@@ -153,9 +153,14 @@ class AlertRuleIndexMixin(Endpoint):
                         serialize(alert_rule, request.user), status=status.HTTP_202_ACCEPTED
                     )
                 else:
-                    return Response(
+                    not_enough_data_text = "Fewer than seven days of historical data available"  # TODO: make this a constant somewhere
+                    response = Response(
                         serialize(alert_rule, request.user), status=status.HTTP_201_CREATED
                     )
+                    response.status_text = (
+                        not_enough_data_text  # we need this to differentiate from the slack 202
+                    )
+                    return response
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
