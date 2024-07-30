@@ -28,13 +28,13 @@ def get_stacktrace_string(data: dict[str, Any]) -> str:
 
     # Get the data used for grouping
     if get_path(data, "app", "hash"):
-        exceptions = data["app"]["component"]["values"]
+        variant_values = data["app"]["component"]["values"]
     else:
-        exceptions = data["system"]["component"]["values"]
+        variant_values = data["system"]["component"]["values"]
 
     # Handle chained exceptions
-    if exceptions and exceptions[0].get("id") == "chained-exception":
-        exceptions = exceptions[0].get("values")
+    if variant_values and variant_values[0].get("id") == "chained-exception":
+        variant_values = variant_values[0].get("values")
 
     frame_count = 0
     html_frame_count = 0  # for a temporary metric
@@ -44,7 +44,7 @@ def get_stacktrace_string(data: dict[str, Any]) -> str:
 
     # Reverse the list of exceptions in order to prioritize the outermost/most recent ones in cases
     # where there are chained exceptions and we end up truncating
-    for exception in reversed(exceptions):
+    for exception in reversed(variant_values):
         if exception.get("id") not in ["exception", "threads"] or not exception.get("contributes"):
             continue
 
