@@ -513,7 +513,7 @@ def register_temporary_features(manager: FeatureManager):
     # Enable severity alerts for new issues based on severity and escalation
     manager.add("projects:high-priority-alerts", ProjectFeature, FeatureHandlerStrategy.INTERNAL, api_expose=True)
     # Enable functionality for attaching  minidumps to events and displaying
-    # then in the group UI.
+    # them in the group UI.
     manager.add("projects:minidump", ProjectFeature, FeatureHandlerStrategy.INTERNAL, default=True, api_expose=True)
     # Enable similarity embeddings API call
     manager.add("projects:similarity-embeddings", ProjectFeature, FeatureHandlerStrategy.INTERNAL, default=False, api_expose=True)
