@@ -207,7 +207,7 @@ def get_seer_similar_issues(
     event: Event,
     primary_hashes: CalculatedHashes,
     num_neighbors: int = 1,
-) -> tuple[dict[str, Any], Group | None]:
+) -> tuple[dict[str, Any], Group] | tuple[None, None]:
     """
     Ask Seer for the given event's nearest neighbor(s) and return the seer response data, sorted
     with the best matches first, along with the group Seer decided the event should go in, if any,
