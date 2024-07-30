@@ -127,6 +127,8 @@ class AlertRuleIndexMixin(Endpoint):
                     if resp.status != 200:
                         alert_rule.delete()
                         return Response({"detail": resp.reason}, status=status.HTTP_400_BAD_REQUEST)
+                    # if resp.reason == "Fewer than 7 days of data":
+                    #     print("halp")
 
                 referrer = request.query_params.get("referrer")
                 session_id = request.query_params.get("sessionId")
