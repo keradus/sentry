@@ -15,7 +15,7 @@ from sentry.testutils.cases import TestCase
 
 
 class GetStacktraceStringTest(TestCase):
-    EXPECTED_STACKTRACE_STRING = 'ZeroDivisionError: division by zero\n  File "python_onboarding.py", function divide_by_zero\n    divide = 1/0'
+    EXPECTED_STACKTRACE_STRING = 'ZeroDivisionError: division by zero\n  Module "__main__", file "python_onboarding.py", function divide_by_zero\n    divide = 1/0'
     BASE_APP_DATA: dict[str, Any] = {
         "app": {
             "type": "component",
@@ -419,6 +419,13 @@ class GetStacktraceStringTest(TestCase):
                     "hint": None,
                     "values": [
                         {
+                            "id": "module",
+                            "name": None,
+                            "contributes": contributes,
+                            "hint": None,
+                            "values": ["__main__"],
+                        },
+                        {
                             "id": "filename",
                             "name": None,
                             "contributes": contributes,
@@ -460,9 +467,9 @@ class GetStacktraceStringTest(TestCase):
 
     def test_contributing_exception_no_contributing_frames(self):
         data_no_contributing_frame = copy.deepcopy(self.BASE_APP_DATA)
-        data_no_contributing_frame["app"]["component"]["values"][0]["values"][0][
-            "values"
-        ] = self.create_frames(1, False)
+        data_no_contributing_frame["app"]["component"]["values"][0]["values"][0]["values"] = (
+            self.create_frames(1, False)
+        )
         stacktrace_str = get_stacktrace_string(data_no_contributing_frame)
         assert stacktrace_str == "ZeroDivisionError: division by zero"
 
@@ -489,7 +496,11 @@ class GetStacktraceStringTest(TestCase):
     def test_chained(self):
         stacktrace_str = get_stacktrace_string(self.CHAINED_APP_DATA)
         expected_stacktrace_str = (
-            'Exception: Catch divide by zero error\n  File "python_onboarding.py", function <module>\n    divide_by_zero()\n  File "python_onboarding.py", function divide_by_zero\n    raise Exception("Catch divide by zero error")\n'
+            "Exception: Catch divide by zero error\n"
+            + '  Module "__main__", file "python_onboarding.py", function <module>\n'
+            + "    divide_by_zero()\n"
+            + '  Module "__main__", file "python_onboarding.py", function divide_by_zero\n'
+            + '    raise Exception("Catch divide by zero error")\n'
             + self.EXPECTED_STACKTRACE_STRING
         )
         assert stacktrace_str == expected_stacktrace_str
@@ -528,12 +539,12 @@ class GetStacktraceStringTest(TestCase):
         expected = "".join(
             ["OuterException: no way"]
             + [
-                f'\n  File "hello.py", function hello_there\n    outer line {i}'
+                f'\n  Module "__main__", file "hello.py", function hello_there\n    outer line {i}'
                 for i in range(1, 26)  #
             ]
             + ["\nMiddleException: un-uh"]
             + [
-                f'\n  File "hello.py", function hello_there\n    middle line {i}'
+                f'\n  Module "__main__", file "hello.py", function hello_there\n    middle line {i}'
                 for i in range(21, 26)
             ]
             + ["\nInnerException: nope"]
@@ -580,12 +591,12 @@ class GetStacktraceStringTest(TestCase):
         expected = "".join(
             ["OuterException: no way"]
             + [
-                f'\n  File "hello.py", function hello_there\n    {{snip}}outer line {i}{{snip}}'
+                f'\n  Module "__main__", file "hello.py", function hello_there\n    {{snip}}outer line {i}{{snip}}'
                 for i in range(1, 16)  #
             ]
             + ["\nMiddleException: un-uh"]
             + [
-                f'\n  File "hello.py", function hello_there\n    {{snip}}middle line {i}{{snip}}'
+                f'\n  Module "__main__", file "hello.py", function hello_there\n    {{snip}}middle line {i}{{snip}}'
                 for i in range(11, 16)
             ]
             + ["\nInnerException: nope"]
@@ -636,7 +647,7 @@ class GetStacktraceStringTest(TestCase):
 
     def test_thread(self):
         stacktrace_str = get_stacktrace_string(self.MOBILE_THREAD_DATA)
-        assert stacktrace_str == 'File "", function TestHandler'
+        assert stacktrace_str == 'Module "", file "", function TestHandler'
 
     def test_system(self):
         data_system = copy.deepcopy(self.BASE_APP_DATA)
