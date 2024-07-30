@@ -467,9 +467,9 @@ class GetStacktraceStringTest(TestCase):
 
     def test_contributing_exception_no_contributing_frames(self):
         data_no_contributing_frame = copy.deepcopy(self.BASE_APP_DATA)
-        data_no_contributing_frame["app"]["component"]["values"][0]["values"][0]["values"] = (
-            self.create_frames(1, False)
-        )
+        data_no_contributing_frame["app"]["component"]["values"][0]["values"][0][
+            "values"
+        ] = self.create_frames(1, False)
         stacktrace_str = get_stacktrace_string(data_no_contributing_frame)
         assert stacktrace_str == "ZeroDivisionError: division by zero"
 
@@ -592,7 +592,7 @@ class GetStacktraceStringTest(TestCase):
             ["OuterException: no way"]
             + [
                 f'\n  Module "__main__", file "hello.py", function hello_there\n    {{snip}}outer line {i}{{snip}}'
-                for i in range(1, 16)  #
+                for i in range(1, 16)
             ]
             + ["\nMiddleException: un-uh"]
             + [
@@ -604,7 +604,7 @@ class GetStacktraceStringTest(TestCase):
         assert stacktrace_str == expected
 
     def test_chained_too_many_frames_minified_js_frame_limit(self):
-        """Test that we restrict fully-minified stacktraces to 20 frames, and all other stacktraces to 50 frames."""
+        """Test that we restrict fully-minified stacktraces to 20 frames, and all other stacktraces to 30 frames."""
         for minified_frames, expected_frame_count in [("all", 20), ("some", 30), ("none", 30)]:
             data_chained_exception = copy.deepcopy(self.CHAINED_APP_DATA)
             data_chained_exception["app"]["component"]["values"][0]["values"] = [
@@ -671,7 +671,7 @@ class GetStacktraceStringTest(TestCase):
         assert stacktrace_str == ""
 
     def test_over_30_contributing_frames(self):
-        """Check that when there are over 50 contributing frames, the last 30 are included."""
+        """Check that when there are over 30 contributing frames, the last 30 are included."""
 
         data_frames = copy.deepcopy(self.BASE_APP_DATA)
         # Create 30 contributing frames, 1-20 -> last 10 should be included
@@ -702,7 +702,7 @@ class GetStacktraceStringTest(TestCase):
         assert num_frames == 30
 
     def test_too_many_frames_minified_js_frame_limit(self):
-        """Test that we restrict fully-minified stacktraces to 20 frames, and all other stacktraces to 50 frames."""
+        """Test that we restrict fully-minified stacktraces to 20 frames, and all other stacktraces to 30 frames."""
         for minified_frames, expected_frame_count in [("all", 20), ("some", 30), ("none", 30)]:
             data_frames = copy.deepcopy(self.BASE_APP_DATA)
             data_frames["app"]["component"]["values"] = [

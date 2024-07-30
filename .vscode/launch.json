@@ -15,9 +15,9 @@
       "name": "sentry backend",
       "type": "python",
       "request": "launch",
-      "stopOnEntry": true,
+      // "stopOnEntry": true,
       "program": "${workspaceRoot}/.venv/bin/sentry",
-      "args": ["devserver"],
+      "args": ["devserver", "--ingest", "--pretty", "--debug-server"],
       "cwd": "${workspaceRoot}",
       "debugOptions": [
         "WaitOnAbnormalExit",
@@ -30,7 +30,25 @@
       "type": "python",
       "request": "launch",
       "program": "${workspaceRoot}/.venv/bin/sentry",
-      "args": ["devserver", "--debug-server", "--no-pretty"],
+      "args": [
+        "devserver",
+        "--debug-server",
+        // "--no-pretty"
+        "--ingest"
+      ],
+      "cwd": "${workspaceRoot}"
+    },
+    {
+      "name": "load mocks",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "./bin/load-mocks",
+      // "args": [
+      //   "devserver",
+      //   "--debug-server",
+      //   // "--no-pretty"
+      //   "--ingest"
+      // ],
       "cwd": "${workspaceRoot}"
     },
     {
@@ -59,7 +77,7 @@
       "type": "python",
       "request": "launch",
       "module": "pytest",
-      "args": ["--verbosity", "2", "${file}"],
+      "args": ["--verbosity", "2", "--reuse-db", "${file}"],
       "django": true,
       "env": {
         "SENTRY_MODEL_MANIFEST_FILE_PATH": "./model-manifest.json"

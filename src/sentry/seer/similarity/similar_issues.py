@@ -116,7 +116,13 @@ def get_similarity_data_from_seer(
         )
     # See `SEER_GROUPING_TIMEOUT` in `sentry.conf.server`
     except (TimeoutError, MaxRetryError) as e:
-        logger.warning("get_seer_similar_issues.request_error", extra=logger_extra)
+        logger.warning(
+            "get_seer_similar_issues.request_error",
+            extra={
+                **logger_extra,
+                # "error": e,
+            },
+        )
         metrics.incr(
             "seer.similar_issues_request",
             sample_rate=SIMILARITY_REQUEST_METRIC_SAMPLE_RATE,
@@ -167,6 +173,7 @@ def get_similarity_data_from_seer(
                 "request_params": similar_issues_request,
                 "response_data": response.data,
                 "response_code": response.status,
+                "error": e,
             },
         )
         metrics.incr(

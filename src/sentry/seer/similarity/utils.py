@@ -116,9 +116,7 @@ def get_stacktrace_string(data: dict[str, Any]) -> str:
             "html_frames": (
                 "none"
                 if html_frame_count == 0
-                else "all"
-                if html_frame_count == final_frame_count
-                else "some"
+                else "all" if html_frame_count == final_frame_count else "some"
             )
         },
     )
@@ -146,9 +144,12 @@ def event_content_is_seer_eligible(event: Event) -> bool:
     return True
 
 
-def killswitch_enabled(project_id: int, event: Event | None = None) -> bool:
+def killswitch_enabled(
+    project_id: int, event: Event | None = None, feature: str | None = None
+) -> bool:
     """
-    Check both the global and similarity-specific Seer killswitches.
+    Check the global, similarity service, and similarity-feature-specific Seer killswitches, and
+    return True if at least one is enabled, and False otherwise.
     """
 
     logger_extra = {"event_id": event.event_id if event else None, "project_id": project_id}
@@ -179,6 +180,29 @@ def killswitch_enabled(project_id: int, event: Event | None = None) -> bool:
         )
         return True
 
+    killswitches_by_feature = {
+        "delete_seer_records": "seer.similarity-embeddings-delete-by-hash-killswitch.enabled"
+    }
+
+    if (
+        feature
+        and feature in killswitches_by_feature
+        and options.get(killswitches_by_feature[feature])
+    ):
+        logger.warning(
+            "should_call_seer_for_grouping.seer_similarity_%s_killswitch_enabled",
+            feature,
+            extra=logger_extra,
+        )
+        metrics.incr(f"grouping.similarity.seer_similarity_{feature}_killswitch_enabled")
+        # TODO: Should this only fire if this is being called from ingest?
+        metrics.incr(
+            "grouping.similarity.did_call_seer",
+            sample_rate=1.0,
+            tags={"call_made": False, "blocker": "similarity-feature-killswitch"},
+        )
+        return True
+
     return False
 
 
@@ -189,9 +213,13 @@ def filter_null_from_event_title(title: str) -> str:
     return title.replace("\x00", "")
 
 
+# T = TypeVar("T", GroupingComponentAsDict, str)
 T = TypeVar("T", dict[str, Any], str)
 
 
+# def _discard_excess_frames(
+#     frames: list[dict[str, Any] | str], max_frames: int, current_frame_count: int
+# ) -> list[dict[str, Any] | str]:
 def _discard_excess_frames(frames: list[T], max_frames: int, current_frame_count: int) -> list[T]:
     if current_frame_count >= max_frames:
         return []

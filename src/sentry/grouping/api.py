@@ -358,6 +358,7 @@ def get_grouping_variants_for_event(
 
     # If no defaults are referenced we produce a single completely custom
     # fingerprint and mark all other variants as non-contributing
+    # TODO: If they don't contribute, why are we wasting cycles computing them?
     if defaults_referenced == 0:
         rv = {}
         for key, component in components.items():

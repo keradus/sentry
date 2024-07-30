@@ -873,6 +873,8 @@ register(
     flags=FLAG_MODIFIABLE_BOOL | FLAG_AUTOMATOR_MODIFIABLE,
 )
 
+# TODO: Should these three actually be "allow empty?" Why would someone deploying sentry actively an
+# empty dictionary as the value? If it's not set at all, we'll use this default.
 register(
     "seer.similarity.global-rate-limit",
     type=Dict,

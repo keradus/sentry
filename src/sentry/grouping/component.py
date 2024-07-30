@@ -38,6 +38,45 @@ def calculate_tree_label(
     return {}
 
 
+# # Defaults for type params are coming in 3.13
+# IdType = TypeVar(
+#     "IdType",
+#     bound=LiteralString | str,
+#     # default=str
+# )
+# ValuesType = TypeVar(
+#     "ValuesType",
+#     bound=list[Any],
+#     # default=list[int | str | bool | float | BaseGroupingComponentAsDict]
+# )
+#
+#
+# class BaseGroupingComponentAsDict(Generic[IdType, ValuesType], TypedDict):
+#     name: str | None
+#     contributes: bool | None
+#     hint: str | None
+#     id: IdType
+#     values: ValuesType
+#
+#
+# class GroupingComponentAsDict(
+#     BaseGroupingComponentAsDict[
+#         str,  # id
+#         list[int | str | bool | float | BaseGroupingComponentAsDict[str, list]],  # values
+#     ],
+# ):
+#     pass
+#
+#
+# class ExceptionComponentAsDict(
+#     BaseGroupingComponentAsDict[
+#         Literal["exception"],  # id
+#         list[BaseGroupingComponentAsDict],  # values
+#     ],
+# ):
+#     pass
+
+
 class GroupingComponentAsDict(TypedDict):
     id: str
     name: str | None

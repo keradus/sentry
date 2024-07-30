@@ -1,0 +1,1028 @@
+{
+  "system": {
+    "key": "system",
+    "type": "component",
+    "description": "exception stack-trace",
+    "hash": "5e5b55fea84b98e3b6121b54839c0ca3",
+    "component": {
+      "id": "system",
+      "name": null,
+      "contributes": true,
+      "hint": null,
+      "values": [
+        {
+          "id": "exception",
+          "name": "exception",
+          "contributes": true,
+          "hint": null,
+          "values": [
+            {
+              "id": "stacktrace",
+              "name": "stack-trace",
+              "contributes": true,
+              "hint": null,
+              "values": [
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": true,
+                  "hint": null,
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "sentry.api.base"
+                      ]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": [
+                        "base.py"
+                      ]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "handle_exception"
+                      ]
+                    },
+                    {
+                      "id": "context-line",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "response = super().handle_exception(exc)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": true,
+                  "hint": null,
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "rest_framework.views"
+                      ]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": [
+                        "views.py"
+                      ]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "handle_exception"
+                      ]
+                    },
+                    {
+                      "id": "context-line",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "self.raise_uncaught_exception(exc)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": true,
+                  "hint": null,
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "rest_framework.views"
+                      ]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": [
+                        "views.py"
+                      ]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "raise_uncaught_exception"
+                      ]
+                    },
+                    {
+                      "id": "context-line",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "raise exc"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": true,
+                  "hint": null,
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "sentry.api.base"
+                      ]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": [
+                        "base.py"
+                      ]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "dispatch"
+                      ]
+                    },
+                    {
+                      "id": "context-line",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "response = handler(request, *args, **kwargs)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": true,
+                  "hint": null,
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "sentry.api.endpoints.auth_index"
+                      ]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": [
+                        "auth_index.py"
+                      ]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "put"
+                      ]
+                    },
+                    {
+                      "id": "context-line",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "authenticated = self._validate_superuser(validator, request, verify_authenticator)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": true,
+                  "hint": null,
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "sentry.api.endpoints.auth_index"
+                      ]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": [
+                        "auth_index.py"
+                      ]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "_validate_superuser"
+                      ]
+                    },
+                    {
+                      "id": "context-line",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "self._verify_user_via_inputs(validator, request)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": true,
+                  "hint": null,
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "sentry.api.endpoints.auth_index"
+                      ]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": [
+                        "auth_index.py"
+                      ]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "_verify_user_via_inputs"
+                      ]
+                    },
+                    {
+                      "id": "context-line",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "authenticated = interface.validate_response(request, challenge, response)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": true,
+                  "hint": null,
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "sentry.auth.authenticators.u2f"
+                      ]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": [
+                        "u2f.py"
+                      ]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "validate_response"
+                      ]
+                    },
+                    {
+                      "id": "context-line",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "self.webauthn_authentication_server.authenticate_complete("
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": true,
+                  "hint": null,
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "fido2.server"
+                      ]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": [
+                        "server.py"
+                      ]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "authenticate_complete"
+                      ]
+                    },
+                    {
+                      "id": "context-line",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "return super(U2FFido2Server, self).authenticate_complete(*args, **kwargs)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": true,
+                  "hint": null,
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "fido2.server"
+                      ]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": [
+                        "server.py"
+                      ]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "authenticate_complete"
+                      ]
+                    },
+                    {
+                      "id": "context-line",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "if websafe_decode(state[\"challenge\"]) != client_data.challenge:"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "type",
+              "name": null,
+              "contributes": true,
+              "hint": null,
+              "values": [
+                "TypeError"
+              ]
+            },
+            {
+              "id": "value",
+              "name": null,
+              "contributes": false,
+              "hint": "ignored because stacktrace takes precedence",
+              "values": [
+                "'NoneType' object is not subscriptable"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "config": {
+      "id": "newstyle:2023-01-11",
+      "base": "newstyle:2019-10-29",
+      "strategies": [
+        "chained-exception:v1",
+        "csp:v1",
+        "expect-ct:v1",
+        "expect-staple:v1",
+        "hpkp:v1",
+        "message:v1",
+        "stacktrace:v1",
+        "template:v1",
+        "threads:v1"
+      ],
+      "changelog": "* Added new language/platform specific stack trace grouping enhancements rules\n  that should make the default grouping experience better.\n  This includes JavaScript, Python, PHP, Go, Java and Kotlin.\n* Added ChukloadErrors via new built-in fingerprinting support.",
+      "delegates": [
+        "frame:v1",
+        "single-exception:v1",
+        "stacktrace:v1"
+      ],
+      "hidden": false,
+      "risk": 1,
+      "latest": true
+    },
+    "hashMismatch": false
+  },
+  "app": {
+    "key": "app",
+    "type": "component",
+    "description": "in-app exception stack-trace",
+    "hash": "495877462c31908414b5bf6157e7ac6e",
+    "component": {
+      "id": "app",
+      "name": "in-app",
+      "contributes": true,
+      "hint": null,
+      "values": [
+        {
+          "id": "exception",
+          "name": "exception",
+          "contributes": true,
+          "hint": null,
+          "values": [
+            {
+              "id": "stacktrace",
+              "name": "stack-trace",
+              "contributes": true,
+              "hint": null,
+              "values": [
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": true,
+                  "hint": null,
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "sentry.api.base"
+                      ]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": [
+                        "base.py"
+                      ]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "handle_exception"
+                      ]
+                    },
+                    {
+                      "id": "context-line",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "response = super().handle_exception(exc)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "marked out of app by stack trace rule (path:**/site-packages/** -app)",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "rest_framework.views"
+                      ]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": [
+                        "views.py"
+                      ]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "handle_exception"
+                      ]
+                    },
+                    {
+                      "id": "context-line",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "self.raise_uncaught_exception(exc)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "marked out of app by stack trace rule (path:**/site-packages/** -app)",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "rest_framework.views"
+                      ]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": [
+                        "views.py"
+                      ]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "raise_uncaught_exception"
+                      ]
+                    },
+                    {
+                      "id": "context-line",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "raise exc"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": true,
+                  "hint": null,
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "sentry.api.base"
+                      ]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": [
+                        "base.py"
+                      ]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "dispatch"
+                      ]
+                    },
+                    {
+                      "id": "context-line",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "response = handler(request, *args, **kwargs)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": true,
+                  "hint": null,
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "sentry.api.endpoints.auth_index"
+                      ]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": [
+                        "auth_index.py"
+                      ]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "put"
+                      ]
+                    },
+                    {
+                      "id": "context-line",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "authenticated = self._validate_superuser(validator, request, verify_authenticator)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": true,
+                  "hint": null,
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "sentry.api.endpoints.auth_index"
+                      ]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": [
+                        "auth_index.py"
+                      ]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "_validate_superuser"
+                      ]
+                    },
+                    {
+                      "id": "context-line",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "self._verify_user_via_inputs(validator, request)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": true,
+                  "hint": null,
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "sentry.api.endpoints.auth_index"
+                      ]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": [
+                        "auth_index.py"
+                      ]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "_verify_user_via_inputs"
+                      ]
+                    },
+                    {
+                      "id": "context-line",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "authenticated = interface.validate_response(request, challenge, response)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": true,
+                  "hint": null,
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "sentry.auth.authenticators.u2f"
+                      ]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": [
+                        "u2f.py"
+                      ]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "validate_response"
+                      ]
+                    },
+                    {
+                      "id": "context-line",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "self.webauthn_authentication_server.authenticate_complete("
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "marked out of app by stack trace rule (path:**/site-packages/** -app)",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "fido2.server"
+                      ]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": [
+                        "server.py"
+                      ]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "authenticate_complete"
+                      ]
+                    },
+                    {
+                      "id": "context-line",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "return super(U2FFido2Server, self).authenticate_complete(*args, **kwargs)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "marked out of app by stack trace rule (path:**/site-packages/** -app)",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "fido2.server"
+                      ]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": [
+                        "server.py"
+                      ]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "authenticate_complete"
+                      ]
+                    },
+                    {
+                      "id": "context-line",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "if websafe_decode(state[\"challenge\"]) != client_data.challenge:"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "type",
+              "name": null,
+              "contributes": true,
+              "hint": null,
+              "values": [
+                "TypeError"
+              ]
+            },
+            {
+              "id": "value",
+              "name": null,
+              "contributes": false,
+              "hint": "ignored because stacktrace takes precedence",
+              "values": [
+                "'NoneType' object is not subscriptable"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "config": {
+      "id": "newstyle:2023-01-11",
+      "base": "newstyle:2019-10-29",
+      "strategies": [
+        "chained-exception:v1",
+        "csp:v1",
+        "expect-ct:v1",
+        "expect-staple:v1",
+        "hpkp:v1",
+        "message:v1",
+        "stacktrace:v1",
+        "template:v1",
+        "threads:v1"
+      ],
+      "changelog": "* Added new language/platform specific stack trace grouping enhancements rules\n  that should make the default grouping experience better.\n  This includes JavaScript, Python, PHP, Go, Java and Kotlin.\n* Added ChukloadErrors via new built-in fingerprinting support.",
+      "delegates": [
+        "frame:v1",
+        "single-exception:v1",
+        "stacktrace:v1"
+      ],
+      "hidden": false,
+      "risk": 1,
+      "latest": true
+    },
+    "hashMismatch": false
+  }
+}

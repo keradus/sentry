@@ -1,0 +1,1508 @@
+{
+  "system": {
+    "key": "system",
+    "type": "salted-component",
+    "description": "modified exception stack-trace",
+    "hash": "9168898ddeabeea84b8e088830e2d49b",
+    "component": {
+      "id": "system",
+      "name": null,
+      "contributes": true,
+      "hint": null,
+      "values": [
+        {
+          "id": "exception",
+          "name": "exception",
+          "contributes": true,
+          "hint": null,
+          "values": [
+            {
+              "id": "stacktrace",
+              "name": "stack-trace",
+              "contributes": true,
+              "hint": null,
+              "values": [
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "ignored by stack trace rule (category:threadbase -group v-group)",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["com.android.internal.os.ZygoteInit"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["zygoteinit.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["main"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "ignored by stack trace rule (category:threadbase -group v-group)",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "com.android.internal.os.RuntimeInit$MethodAndArgsCaller"
+                      ]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["runtimeinit.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["run"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "marked out of app by stack trace rule (module:java.* -app)",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["java.lang.reflect.Method"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["method.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["invoke"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "ignored by stack trace rule (category:threadbase -group v-group)",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["android.app.ActivityThread"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["activitythread.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["main"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "ignored by stack trace rule (category:threadbase -group v-group)",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["android.os.Looper"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["looper.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["loop"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "ignored by stack trace rule (category:threadbase -group v-group)",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["android.os.Handler"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["handler.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["dispatchMessage"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "ignored by stack trace rule (category:threadbase -group v-group)",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["android.os.Handler"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["handler.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["handleCallback"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": true,
+                  "hint": null,
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["com.example.vu.android.empowerplant.MainFragment$3$1"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["mainfragment.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["run"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": true,
+                  "hint": null,
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["com.example.vu.android.empowerplant.MainFragment"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["mainfragment.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["access$200"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": true,
+                  "hint": null,
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["com.example.vu.android.empowerplant.MainFragment"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["mainfragment.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["processDeliveryItem"]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "type",
+              "name": null,
+              "contributes": true,
+              "hint": null,
+              "values": ["MainFragment$BackendAPIException"]
+            },
+            {
+              "id": "value",
+              "name": null,
+              "contributes": false,
+              "hint": "ignored because stacktrace takes precedence",
+              "values": ["Failed to init delivery workflow"]
+            }
+          ]
+        },
+        {
+          "id": "threads",
+          "name": "thread",
+          "contributes": false,
+          "hint": "exception of system takes precedence",
+          "values": [
+            {
+              "id": "stacktrace",
+              "name": "stack-trace",
+              "contributes": true,
+              "hint": null,
+              "values": [
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "ignored by stack trace rule (category:threadbase -group v-group)",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["com.android.internal.os.ZygoteInit"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["zygoteinit.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["main"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "ignored by stack trace rule (category:threadbase -group v-group)",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "com.android.internal.os.RuntimeInit$MethodAndArgsCaller"
+                      ]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["runtimeinit.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["run"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "marked out of app by stack trace rule (module:java.* -app)",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["java.lang.reflect.Method"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["method.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["invoke"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "ignored by stack trace rule (category:threadbase -group v-group)",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["android.app.ActivityThread"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["activitythread.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["main"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "ignored by stack trace rule (category:threadbase -group v-group)",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["android.os.Looper"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["looper.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["loop"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "ignored by stack trace rule (category:threadbase -group v-group)",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["android.os.Handler"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["handler.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["dispatchMessage"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "ignored by stack trace rule (category:threadbase -group v-group)",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["android.os.Handler"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["handler.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["handleCallback"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": true,
+                  "hint": null,
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["com.example.vu.android.empowerplant.MainFragment$3$1"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["mainfragment.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["run"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": true,
+                  "hint": null,
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["com.example.vu.android.empowerplant.MainFragment"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["mainfragment.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["access$200"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": true,
+                  "hint": null,
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["com.example.vu.android.empowerplant.MainFragment"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["mainfragment.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["processDeliveryItem"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": true,
+                  "hint": "marked out of app by stack trace rule (module:java.* -app)",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["java.lang.Thread"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["thread.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["getAllStackTraces"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "marked out of app by stack trace rule (module:java.* -app)",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["java.lang.Thread"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["thread.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["getStackTrace"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "ignored by stack trace rule (category:internals -group)",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["dalvik.system.VMStack"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["vmstack.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["getThreadStackTrace"]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "config": {
+      "id": "newstyle:2023-01-11",
+      "base": "newstyle:2019-10-29",
+      "strategies": [
+        "chained-exception:v1",
+        "csp:v1",
+        "expect-ct:v1",
+        "expect-staple:v1",
+        "hpkp:v1",
+        "message:v1",
+        "stacktrace:v1",
+        "template:v1",
+        "threads:v1"
+      ],
+      "changelog": "* Added new language/platform specific stack trace grouping enhancements rules that should make the default grouping experience better. This includes JavaScript, Python, PHP, Go, Java and Kotlin. * Added ChukloadErrors via new built-in fingerprinting support.",
+      "delegates": ["frame:v1", "single-exception:v1", "stacktrace:v1"],
+      "hidden": false,
+      "risk": 1,
+      "latest": true
+    },
+    "values": ["{{ default }}", "tda", "2.10.5"],
+    "hashMismatch": false
+  },
+  "app": {
+    "key": "app",
+    "type": "salted-component",
+    "description": "modified in-app",
+    "hash": null,
+    "component": {
+      "id": "app",
+      "name": "in-app",
+      "contributes": false,
+      "hint": "exception of system takes precedence",
+      "values": [
+        {
+          "id": "exception",
+          "name": "exception",
+          "contributes": false,
+          "hint": "ignored because hash matches system variant",
+          "values": [
+            {
+              "id": "stacktrace",
+              "name": "stack-trace",
+              "contributes": true,
+              "hint": null,
+              "values": [
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "non app frame",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["com.android.internal.os.ZygoteInit"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["zygoteinit.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["main"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "non app frame",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "com.android.internal.os.RuntimeInit$MethodAndArgsCaller"
+                      ]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["runtimeinit.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["run"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "marked out of app by stack trace rule (module:java.* -app)",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["java.lang.reflect.Method"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["method.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["invoke"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "non app frame",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["android.app.ActivityThread"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["activitythread.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["main"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "non app frame",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["android.os.Looper"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["looper.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["loop"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "non app frame",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["android.os.Handler"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["handler.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["dispatchMessage"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "non app frame",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["android.os.Handler"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["handler.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["handleCallback"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": true,
+                  "hint": null,
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["com.example.vu.android.empowerplant.MainFragment$3$1"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["mainfragment.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["run"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": true,
+                  "hint": null,
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["com.example.vu.android.empowerplant.MainFragment"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["mainfragment.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["access$200"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": true,
+                  "hint": null,
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["com.example.vu.android.empowerplant.MainFragment"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["mainfragment.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["processDeliveryItem"]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "type",
+              "name": null,
+              "contributes": true,
+              "hint": null,
+              "values": ["MainFragment$BackendAPIException"]
+            },
+            {
+              "id": "value",
+              "name": null,
+              "contributes": false,
+              "hint": "ignored because stacktrace takes precedence",
+              "values": ["Failed to init delivery workflow"]
+            }
+          ]
+        },
+        {
+          "id": "threads",
+          "name": "thread",
+          "contributes": false,
+          "hint": "exception of system takes precedence",
+          "values": [
+            {
+              "id": "stacktrace",
+              "name": "stack-trace",
+              "contributes": true,
+              "hint": null,
+              "values": [
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "non app frame",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["com.android.internal.os.ZygoteInit"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["zygoteinit.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["main"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "non app frame",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": [
+                        "com.android.internal.os.RuntimeInit$MethodAndArgsCaller"
+                      ]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["runtimeinit.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["run"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "marked out of app by stack trace rule (module:java.* -app)",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["java.lang.reflect.Method"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["method.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["invoke"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "non app frame",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["android.app.ActivityThread"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["activitythread.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["main"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "non app frame",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["android.os.Looper"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["looper.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["loop"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "non app frame",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["android.os.Handler"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["handler.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["dispatchMessage"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "non app frame",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["android.os.Handler"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["handler.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["handleCallback"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": true,
+                  "hint": null,
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["com.example.vu.android.empowerplant.MainFragment$3$1"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["mainfragment.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["run"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": true,
+                  "hint": null,
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["com.example.vu.android.empowerplant.MainFragment"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["mainfragment.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["access$200"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": true,
+                  "hint": null,
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["com.example.vu.android.empowerplant.MainFragment"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["mainfragment.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["processDeliveryItem"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "marked out of app by stack trace rule (module:java.* -app)",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["java.lang.Thread"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["thread.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["getAllStackTraces"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "marked out of app by stack trace rule (module:java.* -app)",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["java.lang.Thread"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["thread.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["getStackTrace"]
+                    }
+                  ]
+                },
+                {
+                  "id": "frame",
+                  "name": null,
+                  "contributes": false,
+                  "hint": "non app frame",
+                  "values": [
+                    {
+                      "id": "module",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["dalvik.system.VMStack"]
+                    },
+                    {
+                      "id": "filename",
+                      "name": null,
+                      "contributes": false,
+                      "hint": "module takes precedence",
+                      "values": ["vmstack.java"]
+                    },
+                    {
+                      "id": "function",
+                      "name": null,
+                      "contributes": true,
+                      "hint": null,
+                      "values": ["getThreadStackTrace"]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "config": {
+      "id": "newstyle:2023-01-11",
+      "base": "newstyle:2019-10-29",
+      "strategies": [
+        "chained-exception:v1",
+        "csp:v1",
+        "expect-ct:v1",
+        "expect-staple:v1",
+        "hpkp:v1",
+        "message:v1",
+        "stacktrace:v1",
+        "template:v1",
+        "threads:v1"
+      ],
+      "changelog": "* Added new language/platform specific stack trace grouping enhancements rules that should make the default grouping experience better. This includes JavaScript, Python, PHP, Go, Java and Kotlin. * Added ChukloadErrors via new built-in fingerprinting support.",
+      "delegates": ["frame:v1", "single-exception:v1", "stacktrace:v1"],
+      "hidden": false,
+      "risk": 1,
+      "latest": true
+    },
+    "values": ["{{ default }}", "tda", "2.10.5"],
+    "hashMismatch": false
+  }
+}
