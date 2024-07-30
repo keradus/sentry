@@ -136,7 +136,11 @@ def send_historical_data_to_seer(alert_rule: AlertRule, user: User) -> BaseHTTPR
         base_error_response.status = status.HTTP_408_REQUEST_TIMEOUT
         return base_error_response
 
-    # TODO warn if there isn't at least 7 days of data
+    MIN_DAYS = 7
+    available_data_days = historical_data["end"] - historical_data["start"]
+    if available_data_days < timedelta(days=MIN_DAYS):
+        # TODO: surface a warning to the FE (how?)
+        pass
     return resp
 
 
