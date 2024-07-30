@@ -496,7 +496,7 @@
 # begin: stronger typing
 [[tool.mypy.overrides]]
   module = [
-    "sentry.api.endpoints.issues.*",
+      "sentry.api.endpoints.issues.*",
     "sentry.api.helpers.source_map_helper",
     "sentry.auth.services.*",
     "sentry.buffer.*",
@@ -645,7 +645,7 @@
     "tests.sentry.types.test_actor",
     "tests.sentry.types.test_region",
     "tools.*",
-  ]
+]
   disallow_any_generics = true
   disallow_untyped_defs = true
   # end: stronger typing
