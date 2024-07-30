@@ -1702,7 +1702,7 @@ def _save_aggregate_new(
 
     # If we've found one, great. No need to do any more calculations
     if primary.existing_grouphash:
-        group_info = handle_existing_grouphash(
+        group_info = handle_existing_group_or_grouphash(
             job, primary.existing_grouphash, primary.grouphashes, group_processing_kwargs
         )
         result = "found_primary"
@@ -1713,7 +1713,7 @@ def _save_aggregate_new(
 
         # Now we know for sure whether or not a group already exists, so handle both cases
         if secondary.existing_grouphash:
-            group_info = handle_existing_grouphash(
+            group_info = handle_existing_group_or_grouphash(
                 job, secondary.existing_grouphash, all_grouphashes, group_processing_kwargs
             )
             result = "found_secondary"
@@ -1785,9 +1785,9 @@ def get_hashes_and_grouphashes(
         return NULL_GROUPHASH_INFO
 
 
-def handle_existing_grouphash(
+def handle_existing_group_or_grouphash(
     job: Job,
-    existing_grouphash: GroupHash,
+    existing_group_or_grouphash: GroupHash | Group,
     all_grouphashes: list[GroupHash],
     group_processing_kwargs: dict[str, Any],
 ) -> GroupInfo | None:
@@ -1797,24 +1797,27 @@ def handle_existing_grouphash(
     grouphashes to the group.
     """
 
-    # There is a race condition here where two processes could "steal"
-    # hashes from each other. In practice this should not be user-visible
-    # as group creation is synchronized, meaning the only way hashes could
-    # jump between groups is if there were two processes that:
-    #
-    # 1) have BOTH found an existing group
-    #    (otherwise at least one of them would be in the group creation
-    #    codepath which has transaction isolation/acquires row locks)
-    # 2) AND are looking at the same set, or an overlapping set of hashes
-    #    (otherwise they would not operate on the same rows)
-    # 3) yet somehow also retrieve different groups here
-    #    (otherwise the update would not change anything)
-    #
-    # We think this is a very unlikely situation. A previous version of
-    # _save_aggregate had races around group creation which made this race
-    # more user visible. For more context, see 84c6f75a and d0e22787, as
-    # well as GH-5085.
-    group = Group.objects.get(id=existing_grouphash.group_id)
+    if isinstance(existing_group_or_grouphash, GroupHash):
+        # There is a race condition here where two processes could "steal"
+        # hashes from each other. In practice this should not be user-visible
+        # as group creation is synchronized, meaning the only way hashes could
+        # jump between groups is if there were two processes that:
+        #
+        # 1) have BOTH found an existing group
+        #    (otherwise at least one of them would be in the group creation
+        #    codepath which has transaction isolation/acquires row locks)
+        # 2) AND are looking at the same set, or an overlapping set of hashes
+        #    (otherwise they would not operate on the same rows)
+        # 3) yet somehow also retrieve different groups here
+        #    (otherwise the update would not change anything)
+        #
+        # We think this is a very unlikely situation. A previous version of
+        # _save_aggregate had races around group creation which made this race
+        # more user visible. For more context, see 84c6f75a and d0e22787, as
+        # well as GH-5085.
+        group = Group.objects.get(id=existing_group_or_grouphash.group_id)
+    else:
+        group = existing_group_or_grouphash
 
     if check_for_category_mismatch(group):
         return None
@@ -1904,7 +1907,7 @@ def create_group_with_grouphashes(
         # this function at all)
         else:
             # TODO: should we be setting tags here, too?
-            return handle_existing_grouphash(
+            return handle_existing_group_or_grouphash(
                 job, existing_grouphash, grouphashes, group_processing_kwargs
             )
 
