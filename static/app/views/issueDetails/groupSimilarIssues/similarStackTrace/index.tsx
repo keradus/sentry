@@ -1,8 +1,8 @@
-import {Fragment, useCallback, useEffect, useState} from 'react';
-import type {RouteComponentProps} from 'react-router';
 import styled from '@emotion/styled';
 import type {Location} from 'history';
 import * as qs from 'query-string';
+import {Fragment, useCallback, useEffect, useState} from 'react';
+import type {RouteComponentProps} from 'react-router';
 
 import Alert from 'sentry/components/alert';
 import EmptyStateWarning from 'sentry/components/emptyStateWarning';
@@ -54,8 +54,10 @@ function SimilarStackTrace({params, location, project}: Props) {
   const prevLocationSearch = usePrevious(location.search);
   const hasSimilarityFeature = project.features.includes('similarity-view');
   const hasSimilarityEmbeddingsFeature =
-    project.features.includes('similarity-embeddings') ||
-    location.query.similarityEmbeddings === '1';
+    location.query.similarityEmbeddings === '0'
+      ? false
+      : project.features.includes('similarity-embeddings') ||
+        location.query.similarityEmbeddings === '1';
 
   const fetchData = useCallback(() => {
     setStatus('loading');
