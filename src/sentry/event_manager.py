@@ -71,7 +71,7 @@ from sentry.grouping.ingest.metrics import (
     record_hash_calculation_metrics,
     record_new_group_metrics,
 )
-from sentry.grouping.ingest.seer import get_seer_similar_issues, should_call_seer_for_grouping
+from sentry.grouping.ingest.seer import maybe_check_seer_for_matching_group
 from sentry.grouping.ingest.utils import (
     add_group_id_to_grouphashes,
     check_for_category_mismatch,
@@ -1533,30 +1533,7 @@ def _save_aggregate(
             # If we still haven't found a matching grouphash, we're now safe to go ahead and talk to
             # seer and/or create the group.
             if existing_grouphash is None:
-                seer_matched_group = None
-
-                if should_call_seer_for_grouping(event, primary_hashes):
-                    metrics.incr(
-                        "grouping.similarity.did_call_seer",
-                        # TODO: Consider lowering this (in all the spots this metric is
-                        # collected) once we roll Seer grouping out more widely
-                        sample_rate=1.0,
-                        tags={"call_made": True, "blocker": "none"},
-                    )
-                    try:
-                        # If the `projects:similarity-embeddings-grouping` feature is disabled,
-                        # we'll still get back result metadata, but `seer_matched_group` will be None
-                        seer_response_data, seer_matched_group = get_seer_similar_issues(
-                            event, primary_hashes
-                        )
-                        event.data["seer_similarity"] = seer_response_data
-
-                    # Insurance - in theory we shouldn't ever land here
-                    except Exception as e:
-                        sentry_sdk.capture_exception(
-                            e, tags={"event": event.event_id, "project": project.id}
-                        )
-
+                seer_matched_group = maybe_check_seer_for_matching_group(event, primary_hashes)
                 group = seer_matched_group or _create_group(project, event, **group_creation_kwargs)
 
                 if root_hierarchical_grouphash is not None:
