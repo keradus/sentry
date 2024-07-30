@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from collections.abc import Generator, Iterable, Iterator, Sequence
-from typing import Any
+from typing import TypedDict
 
 from sentry.grouping.utils import hash_from_values
 
@@ -36,6 +36,14 @@ def calculate_tree_label(
         if isinstance(value, GroupingComponent) and value.contributes and value.tree_label:
             return value.tree_label
     return {}
+
+
+class GroupingComponentAsDict(TypedDict):
+    id: str
+    name: str | None
+    contributes: bool | None
+    hint: str | None
+    values: list[int | str | bool | float | GroupingComponentAsDict]
 
 
 class GroupingComponent:
@@ -172,9 +180,9 @@ class GroupingComponent:
             return hash_from_values(self.iter_values())
         return None
 
-    def as_dict(self) -> dict[str, Any]:
+    def as_dict(self) -> GroupingComponentAsDict:
         """Converts the component tree into a dictionary."""
-        rv: dict[str, Any] = {
+        rv: GroupingComponentAsDict = {
             "id": self.id,
             "name": self.name,
             "contributes": self.contributes,
