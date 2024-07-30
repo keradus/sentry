@@ -124,7 +124,7 @@ def get_path(data: PathSearchable, *path, should_log=False, **kwargs):
             data = data[p]
         elif isinstance(data, (list, tuple)) and isinstance(p, int) and -len(data) <= p < len(data):
             data = data[p]
-        elif hasattr(data, p):
+        elif isinstance(p, str) and hasattr(data, p):
             data = getattr(data, p)
         else:
             if should_log:
